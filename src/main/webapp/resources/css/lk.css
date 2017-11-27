@@ -1,0 +1,178 @@
+#login-form{
+    width: 425px;
+    box-shadow: 0 0 20px 1px rgba(106, 206, 235, 1);
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    font-family: Tahoma;
+}
+div.tab {
+    width: 424px;
+    overflow: hidden;
+    border: 1px solid rgba(106, 206, 235, 0.45);
+    background-color: #FFFBED;
+
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 212px;
+    color: #30394F;
+    font-size: 18px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: rgba(106, 206, 235, 0.45);
+    border-bottom: 1px solid #ffa70b;
+
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: rgba(106, 206, 235, 0.25);
+    border-bottom: 1px solid rgba(106, 206, 235, 0.25);
+}
+
+/* Style the tab content */
+.tabcontent {
+    width: 600px;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid rgba(106, 206, 235, 0.45);
+    border-top: none;
+    background-color: rgba(106, 206, 235, 0.25);
+
+}
+
+/*////////////////////////////////////вход*/
+.form-4 {
+    /* Size and position */
+    width: 339px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    /* Font styles */
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: #30394F;
+    text-shadow: 0 2px 1px rgba(255, 167, 11, 0.3);
+}
+
+.form-4 h1 {
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+
+.form-4 input[type=text],
+.form-4 input[type=password] {
+    /* Size and position */
+    width: 100%;
+    padding: 8px 4px 8px 10px;
+    margin-bottom: 15px;
+
+    /* Styles */
+    border: 1px solid #30394F; /* Fallback */
+    border: 1px solid rgba(48, 57, 79, 0.80);
+    background: rgba(237, 232, 223, 0.15);
+    border-radius: 0;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 1px 1px rgba(237, 232, 223, 0.1);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    /* Font styles */
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: #30394F;
+    font-size: 13px;
+}
+
+.form-4 input::-webkit-input-placeholder {
+    color: rgba(48, 57, 79, 0.50);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.form-4 input:-moz-placeholder {
+    color: rgba(106, 206, 235, 0.50);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.form-4 input:-ms-input-placeholder {
+    color: rgba(106, 206, 235, 0.50);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.form-4 input[type=text]:hover,
+.form-4 input[type=password]:hover {
+    border-color: #30394F;
+}
+
+.form-4 input[type=text]:focus,
+.form-4 input[type=password]:focus,
+.form-4 input[type=submit]:focus {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 1px 1px rgba(0, 0, 0, 0.1),
+    0 0 0 3px rgba(255, 255, 255, 0.15);
+    outline: none;
+}
+
+/* Fallback */
+.no-boxshadow .form-4 input[type=text]:focus,
+.no-boxshadow .form-4 input[type=password]:focus {
+    outline: 1px solid white;
+}
+
+.form-4 input[type=submit] {
+    /* Size and position */
+    width: 100%;
+    padding: 8px 5px;
+
+    /* Styles */
+    background: linear-gradient(rgba(106, 206, 235, 0.50), rgba(106, 206, 235, 0.70));
+    border-radius: 0;
+    border: 1px solid #30394F;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.4),
+    0 2px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    /* Font styles */
+    color: #30394F;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+}
+
+.form-4 input[type=submit]:hover {
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 20px 30px rgba(106, 206, 235, 0.50);
+}
+
+/* Fallback */
+.no-boxshadow .form-4 input[type=submit]:hover {
+    background: #30394F;
+}
+
+.form-4 label {
+    display: none;
+    padding: 0 0 5px 2px;
+    cursor: pointer;
+}
+
+.form-4 label:hover ~ input {
+    border-color: #30394F;
+}
+
+.no-placeholder .form-4 label {
+    display: block;
+}

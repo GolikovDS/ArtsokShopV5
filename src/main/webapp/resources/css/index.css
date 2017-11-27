@@ -1,0 +1,98 @@
+/*30394F*/
+/*FF434C*/
+/*6ACEEB*/
+/*6ACEEB*/
+/*FFFBED*/
+
+#index {
+    color: #30394F;
+    color: #ffa70b;
+    color: #FF434C;
+    color: #6ACEEB;
+    color: #EDE8DF;
+    color: #FFFBED;
+}
+
+body {
+    overflow: auto;
+    background-size: 100%;
+    background-color: #FFFBED;
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma;
+
+}
+
+.head {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 60px;
+    background-color: #30394F;
+    padding-top: 10px;
+    box-shadow: 0 10px 20px 1px #ffa70b;
+
+}
+
+.head a img {
+    width: 60px;
+    height: 45px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+#context {
+    position: relative;
+    /*border: 3px solid #6ACEEB;*/
+    /*overflow: auto;*/
+    top: 105px;
+    left: 300px;
+    max-width: 1200px;
+    min-width: 300px;
+    min-height: calc(100vh - 170px);
+}
+
+#bottom {
+    position: relative;
+    top: 120px;
+    right: 0;
+    left: 0;
+
+    height: 50px;
+    background-color: #30394F;
+    box-shadow: 0 -10px 20px 1px #ffa70b;
+
+}
+
+#button-menu-group {
+    padding-left: 150px;
+    padding-top: 0;
+    width: 80%;
+}
+
+.btnMenu {
+    margin-top: 7px;
+    margin-left: -5px;
+    width: 15%;
+    height: 50px;
+    list-style: none;
+    border-radius: 0;
+    border-width: 0;
+    color: #ffa70b;
+    background-color: #30394F;
+    font-size: 110%;
+    outline: none;
+}
+
+.btnMenu:hover {
+    border-width: 0;
+    box-shadow: 0 15px 10px -5px rgba(106, 206, 235, 0.8);
+}
+
+.btnMenu:active, .btnMenu:active {
+    border-width: 0;
+    box-shadow: 0 10px 10px -3px #FF434C;
+    text-shadow: 0 0 5px #FF434C;
+
+}
+
