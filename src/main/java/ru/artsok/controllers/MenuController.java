@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import ru.artsok.dao.entitys.Productions;
 import ru.artsok.dao.entitys.User;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping("/menu")
@@ -89,23 +94,57 @@ public class MenuController {
         return modelAndView;
     }
 
-    public ModelAndView getAuthenticationName(ModelAndView modelAndView){
+    public ModelAndView getAuthenticationName(ModelAndView modelAndView) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null) {
             modelAndView.addObject("username", authentication.getName());
         }
         return modelAndView;
     }
+
     @RequestMapping(params = "kat", method = RequestMethod.POST)
     public String production() {
         return "redirect:menu/kat";
     }
+
     @RequestMapping(value = "/kat", method = RequestMethod.GET)
-    public ModelAndView productionRedirect(){
+    public ModelAndView productionRedirect() {
         ModelAndView modelAndView = new ModelAndView();
+        List<Productions> productionses = new ArrayList<>();
         getAuthenticationName(modelAndView);
         modelAndView.setViewName("index");
         modelAndView.addObject("context", "contexts/productions.jsp");
+        productionses = new ArrayList<>(Arrays.asList(
+                new Productions("/resources/images/mgp/1.bmp", "Модули газового пожаротушени", "MGP", "", "", "", "", ""),
+                new Productions("/resources/images/migu/1.jpg", "Модули изотермические для жидкой двуокиси углерода", "MIGU", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/aist.jpg", "Прибор приемно-контрольный пожарный и управления ППКПУ-4/16 «АИСТ", "PPKPU", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/stoika_el.jpg", "СТОЙКИ С ВЕСОВЫМИ УСТРОЙСТВАМИ ДЛЯ МОДУЛЕЙ", "ASTE", "", "", "", "", "</tr><tr>"),
+
+                new Productions("/resources/images/production_menu/stoika_mex.jpg", "СТОЙКА С МЕХАНИЧЕСКИМ ВЕСОВЫМ УСТРОЙСТВОМ", "AST", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/rampa.jpg", "РАМПЫ ДЛЯ МГП", "RAMP", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/opora.jpg", "Опоры стеновые", "OPORA", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/kollector.jpg", "Коллектора", "COLLECTOR", "", "", "", "", "</tr><tr>"),
+
+                new Productions("/resources/images/production_menu/rvd.jpg", "РУКАВА ВЫСОКОГО ДАВЛЕНИЯ", "RVD", "", "", "", "", ""),
+                new Productions("", "ТРУБОПРОВОД ДЛЯ ПНЕВМОПУСКА", "TRUBPROV", "", "", "", "", ""),
+                new Productions("", "НИППЕЛИ И ПЕРЕХОДНИКИ", "NIPPEL", "", "", "", "", ""),
+                new Productions("", "НАСАДКИ", "NASADKI", "", "", "", "", "</tr><tr>"),
+
+                new Productions("", "ОБРАТНЫЕ КЛАПАНЫ ГЕРМЕТИЧНЫЕ", "KLAPAN", "", "", "", "", ""),
+                new Productions("", "РАСПРЕДЕЛИТЕЛЬНЫЕ УСТРОЙСТВА", "RU", "", "", "", "", ""),
+                new Productions("", "БАЛЛОН ПОБУДИТЕЛЬНЫЙ", "BALLON_PAB", "", "", "", "", ""),
+                new Productions("", "СОЕДИНЕНИЯ РЕЗЬБОВЫЕ", "SOEDEN", "", "", "", "", "</tr><tr>"),
+
+                new Productions("", "ЗАГЛУШКИ ИСПЫТАТЕЛЬНЫЕ", "ZAGLUSHKA", "", "", "", "", ""),
+                new Productions("", "УСТРОЙСТВО ДЛЯ ОПРЕССОВКИ И ПРОДУВКИ", "UFOROPR", "", "", "", "", ""),
+                new Productions("", "БАЛЛОН ДЛЯ ОПРЕССОВКИ И ПРОДУВКИ", "BALLON_FOR_OPR", "", "", "", "", ""),
+                new Productions("", "ТЕЛЕЖКА ТРАНСПОРТНАЯ", "TELEGKA", "", "", "", "", "</tr><tr>"),
+
+                new Productions("", "УСТРОЙСТВО ЗАПРАВОЧНОЕ", "ZAPRAVOCNOE", "", "", "", "", ""),
+                new Productions("", "ПОДЪЕМНИК ДЛЯ МГП", "PODEMNIK", "", "", "", "", ""),
+                new Productions("", "ПРИСПОСОБЛЕНИЕ ДЛЯ КОНТРОЛЯ ПУСКОВОГО УСТРОЙСТВА МГП", "PRISP_FOR_CONTR_PUSK", "", "", "", "", "")
+        ));
+        modelAndView.addObject("production", productionses);
 
         return modelAndView;
     }
@@ -156,7 +195,6 @@ public class MenuController {
         model.addAttribute("productName", s);
         return "redirect:/redirect_production";
     }
-
 
 
 }
