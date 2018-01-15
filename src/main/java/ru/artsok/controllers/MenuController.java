@@ -126,23 +126,23 @@ public class MenuController {
                 new Productions("/resources/images/production_menu/kollector.jpg", "Коллектора", "COLLECTOR", "", "", "", "", "</tr><tr>"),
 
                 new Productions("/resources/images/production_menu/rvd.jpg", "РУКАВА ВЫСОКОГО ДАВЛЕНИЯ", "RVD", "", "", "", "", ""),
-                new Productions("", "ТРУБОПРОВОД ДЛЯ ПНЕВМОПУСКА", "TRUBPROV", "", "", "", "", ""),
-                new Productions("", "НИППЕЛИ И ПЕРЕХОДНИКИ", "NIPPEL", "", "", "", "", ""),
-                new Productions("", "НАСАДКИ", "NASADKI", "", "", "", "", "</tr><tr>"),
+                new Productions("/resources/images/production_menu/truboprovod.jpg", "ТРУБОПРОВОД ДЛЯ ПНЕВМОПУСКА", "TRUBPROV", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/nipel.jpg", "НИППЕЛИ И ПЕРЕХОДНИКИ", "NIPPEL", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/nasadok.jpg", "НАСАДКИ", "NASADKI", "", "", "", "", "</tr><tr>"),
 
-                new Productions("", "ОБРАТНЫЕ КЛАПАНЫ ГЕРМЕТИЧНЫЕ", "KLAPAN", "", "", "", "", ""),
-                new Productions("", "РАСПРЕДЕЛИТЕЛЬНЫЕ УСТРОЙСТВА", "RU", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/klapan.jpg", "ОБРАТНЫЕ КЛАПАНЫ ГЕРМЕТИЧНЫЕ", "KLAPAN", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/ru.jpg", "РАСПРЕДЕЛИТЕЛЬНЫЕ УСТРОЙСТВА", "RU", "", "", "", "", ""),
                 new Productions("", "БАЛЛОН ПОБУДИТЕЛЬНЫЙ", "BALLON_PAB", "", "", "", "", ""),
-                new Productions("", "СОЕДИНЕНИЯ РЕЗЬБОВЫЕ", "SOEDEN", "", "", "", "", "</tr><tr>"),
+                new Productions("resources/images/production_menu/prohod.jpg", "СОЕДИНЕНИЯ РЕЗЬБОВЫЕ", "SOEDEN", "", "", "", "", "</tr><tr>"),
 
-                new Productions("", "ЗАГЛУШКИ ИСПЫТАТЕЛЬНЫЕ", "ZAGLUSHKA", "", "", "", "", ""),
-                new Productions("", "УСТРОЙСТВО ДЛЯ ОПРЕССОВКИ И ПРОДУВКИ", "UFOROPR", "", "", "", "", ""),
-                new Productions("", "БАЛЛОН ДЛЯ ОПРЕССОВКИ И ПРОДУВКИ", "BALLON_FOR_OPR", "", "", "", "", ""),
-                new Productions("", "ТЕЛЕЖКА ТРАНСПОРТНАЯ", "TELEGKA", "", "", "", "", "</tr><tr>"),
+                new Productions("/resources/images/production_menu/zaglushka.jpg", "ЗАГЛУШКИ ИСПЫТАТЕЛЬНЫЕ", "ZAGLUSHKA", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/opresov.jpg", "УСТРОЙСТВО ДЛЯ ОПРЕССОВКИ И ПРОДУВКИ", "UFOROPR", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/ballon_opress.jpg", "БАЛЛОН ДЛЯ ОПРЕССОВКИ И ПРОДУВКИ", "BALLON_FOR_OPR", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/telega.jpg", "ТЕЛЕЖКА ТРАНСПОРТНАЯ", "TELEGKA", "", "", "", "", "</tr><tr>"),
 
-                new Productions("", "УСТРОЙСТВО ЗАПРАВОЧНОЕ", "ZAPRAVOCNOE", "", "", "", "", ""),
-                new Productions("", "ПОДЪЕМНИК ДЛЯ МГП", "PODEMNIK", "", "", "", "", ""),
-                new Productions("", "ПРИСПОСОБЛЕНИЕ ДЛЯ КОНТРОЛЯ ПУСКОВОГО УСТРОЙСТВА МГП", "PRISP_FOR_CONTR_PUSK", "", "", "", "", "")
+                new Productions("/resources/images/production_menu/zaprav.jpg", "УСТРОЙСТВО ЗАПРАВОЧНОЕ", "ZAPRAVOCNOE", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/podemnic.jpg", "ПОДЪЕМНИК ДЛЯ МГП", "PODEMNIK", "", "", "", "", ""),
+                new Productions("/resources/images/production_menu/control_pusc.jpg", "ПРИСПОСОБЛЕНИЕ ДЛЯ КОНТРОЛЯ ПУСКОВОГО УСТРОЙСТВА МГП", "PRISP_FOR_CONTR_PUSK", "", "", "", "", "")
         ));
         modelAndView.addObject("production", productionses);
 
