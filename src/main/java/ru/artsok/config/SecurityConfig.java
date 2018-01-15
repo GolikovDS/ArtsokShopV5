@@ -33,12 +33,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
         http.authorizeRequests()
-                .antMatchers("/menu/basket").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/menu/admin").access("hasRole('ROLE_ADMIN')")
                 .and().formLogin()
                 .loginPage("/menu/login")
-                .defaultSuccessUrl("/menu/basket")
+                .defaultSuccessUrl("/menu/welcome_page")
                 .failureForwardUrl("/menu/login?error=true")
                 .loginProcessingUrl("/login")
                 .usernameParameter("username")

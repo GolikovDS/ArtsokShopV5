@@ -16,7 +16,7 @@
 body {
     overflow: auto;
     background-size: 100%;
-    background-color: #FFFBED;
+    background-color: white;
     padding: 0;
     margin: 0;
     font-family: Tahoma;
@@ -28,9 +28,9 @@ body {
     z-index: 5;
     width: 100%;
     height: 60px;
-    background-color: #30394F;
+    background-color: #FFFFFF;
     padding-top: 10px;
-    box-shadow: 0 10px 20px 1px #ffa70b;
+    box-shadow: 0 1px 1px 1px #151515;
 
 }
 
@@ -50,6 +50,7 @@ body {
     max-width: 1200px;
     min-width: 300px;
     min-height: calc(100vh - 170px);
+    background-color: white;
 }
 
 #bottom {
@@ -59,8 +60,8 @@ body {
     left: 0;
 
     height: 50px;
-    background-color: #30394F;
-    box-shadow: 0 -10px 20px 1px #ffa70b;
+    background-color: #ffffff;
+    box-shadow: 0 -1px 1px 1px #30394f;
 
 }
 
@@ -79,20 +80,64 @@ body {
     border-radius: 0;
     border-width: 0;
     color: #ffa70b;
-    background-color: #30394F;
+    background-color: #ffffff;
     font-size: 110%;
     outline: none;
 }
 
 .btnMenu:hover {
     border-width: 0;
-    box-shadow: 0 15px 10px -5px rgba(106, 206, 235, 0.8);
+    /*box-shadow: 0 10px 10px -5px rgba(106, 206, 235, 0.8);*/
+    background-color: rgba(237, 232, 223, 0.35);
+    cursor: hand;
 }
 
 .btnMenu:active, .btnMenu:active {
-    border-width: 0;
-    box-shadow: 0 10px 10px -3px #FF434C;
-    text-shadow: 0 0 5px #FF434C;
+    /*border-width: 0;*/
+    /*box-shadow: 0 10px 10px -3px #FF434C;*/
+    text-shadow: 0 0 1px #FF434C;
 
 }
+
+.table-production td {
+    border: none;
+    margin-left: 50px;
+    width: 250px;
+    height: 300px;
+}
+
+.div-production{
+    padding-left: 50px;
+    width: 250px;
+    height: 300px;
+}
+
+.div-production img{
+
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(48, 57, 79, 0.52);
+}
+.div-production button{
+    width: 200px;
+    height: 200px;
+    border: none;
+    background-color: transparent;
+}
+
+.div-production:hover{
+    box-shadow: 0 10px 10px -3px rgba(48, 57, 79, 0.52);
+
+}
+
+.description_production_admin{
+    width: 600px;
+    height: 400px;
+}
+
+.description_production_admin img{
+    width: 100px;
+    height: 200px;
+}
+
 

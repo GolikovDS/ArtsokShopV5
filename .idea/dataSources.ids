@@ -19036,6 +19036,17 @@
       <column name="last_used" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="persistent_logins_pkey" columns="series"/>
     </table>
+    <table name="productions" schema="public" catalog="artsok_sql" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvZHVjdGlvbnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="main_image" sqlType="bytea" precision="2147483647" scale="0" nullable="false" jdbcType="-2"/>
+      <column name="main_text" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="first_image" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="second_image" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="third_image" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="productions_pkey" columns="id"/>
+    </table>
+    <table name="productions_id_seq" schema="public" catalog="artsok_sql" type="SEQUENCE"/>
     <table name="users" schema="public" catalog="artsok_sql" type="TABLE">
       <column name="username" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
