@@ -53,11 +53,11 @@ public class MainController {
                 break;
             case "MIGU":
                 model.addObject("production", new Productions.ProductionsBuilder().firstImage("resources/images/migu/1.jpg").
-                        secondImage("resources/images/migu/2.jpg").thirdImage("resources/images/migu/3.jpg").description("in-work").build());
+                        secondImage("resources/images/migu/2.jpg").thirdImage("resources/images/migu/3.jpg").description("migu-description").build());
                 break;
             case "PPKPU":
                 model.addObject("production", new Productions.ProductionsBuilder().firstImage("resources/images/ppkpu/1.jpg").
-                        secondImage("resources/images/ppkpu/2.jpg").thirdImage("resources/images/ppkpu/5.png").description("in-work").build());
+                        secondImage("resources/images/ppkpu/2.jpg").thirdImage("resources/images/ppkpu/5.png").description("ppkpu-description").build());
                 break;
             case "ASTE":
                 model.addObject("production", new Productions.ProductionsBuilder().firstImage("").
