@@ -8,11 +8,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import ru.artsok.dao.entitys.Productions;
 import ru.artsok.dao.entitys.User;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -115,8 +117,10 @@ public class MenuController {
         modelAndView.setViewName("index");
         modelAndView.addObject("context", "contexts/productions.jsp");
         productionses = new ArrayList<>(Arrays.asList(
-                new Productions("/resources/images/mgp/1.bmp", "Модули газового пожаротушени", "MGP", "", "", "", "", ""),
-                new Productions("/resources/images/migu/1.jpg", "Модули изотермические для жидкой двуокиси углерода", "MIGU", "", "", "", "", ""),
+                new Productions.ProductionsBuilder().mainImage("/resources/images/production_menu/mgp.jpg").mainText("Модули газового пожаротушени")
+                        .buttonName("MGP").build(),
+                new Productions.ProductionsBuilder().mainImage("/resources/images/production_menu/migu.jpg").mainText("Модули изотермические для жидкой двуокиси углерода")
+                        .buttonName("MIGU").build(),
                 new Productions("/resources/images/production_menu/aist.jpg", "Прибор приемно-контрольный пожарный и управления ППКПУ-4/16 «АИСТ", "PPKPU", "", "", "", "", ""),
                 new Productions("/resources/images/production_menu/stoika_el.jpg", "СТОЙКИ С ВЕСОВЫМИ УСТРОЙСТВАМИ ДЛЯ МОДУЛЕЙ", "ASTE", "", "", "", "", "</tr><tr>"),
 
@@ -132,8 +136,9 @@ public class MenuController {
 
                 new Productions("/resources/images/production_menu/klapan.jpg", "ОБРАТНЫЕ КЛАПАНЫ ГЕРМЕТИЧНЫЕ", "KLAPAN", "", "", "", "", ""),
                 new Productions("/resources/images/production_menu/ru.jpg", "РАСПРЕДЕЛИТЕЛЬНЫЕ УСТРОЙСТВА", "RU", "", "", "", "", ""),
-                new Productions("", "БАЛЛОН ПОБУДИТЕЛЬНЫЙ", "BALLON_PAB", "", "", "", "", ""),
-                new Productions("resources/images/production_menu/prohod.jpg", "СОЕДИНЕНИЯ РЕЗЬБОВЫЕ", "SOEDEN", "", "", "", "", "</tr><tr>"),
+                new Productions.ProductionsBuilder().mainImage("/resources/images/production_menu/pobud_ballon.jpg").mainText("Баллон побудительный")
+                        .buttonName("BALLON_PAB").build(),
+                new Productions("/resources/images/production_menu/soedenenie.jpg", "СОЕДИНЕНИЯ РЕЗЬБОВЫЕ", "SOEDEN", "", "", "", "", "</tr><tr>"),
 
                 new Productions("/resources/images/production_menu/zaglushka.jpg", "ЗАГЛУШКИ ИСПЫТАТЕЛЬНЫЕ", "ZAGLUSHKA", "", "", "", "", ""),
                 new Productions("/resources/images/production_menu/opresov.jpg", "УСТРОЙСТВО ДЛЯ ОПРЕССОВКИ И ПРОДУВКИ", "UFOROPR", "", "", "", "", ""),
@@ -142,7 +147,9 @@ public class MenuController {
 
                 new Productions("/resources/images/production_menu/zaprav.jpg", "УСТРОЙСТВО ЗАПРАВОЧНОЕ", "ZAPRAVOCNOE", "", "", "", "", ""),
                 new Productions("/resources/images/production_menu/podemnic.jpg", "ПОДЪЕМНИК ДЛЯ МГП", "PODEMNIK", "", "", "", "", ""),
-                new Productions("/resources/images/production_menu/control_pusc.jpg", "ПРИСПОСОБЛЕНИЕ ДЛЯ КОНТРОЛЯ ПУСКОВОГО УСТРОЙСТВА МГП", "PRISP_FOR_CONTR_PUSK", "", "", "", "", "")
+                new Productions("/resources/images/production_menu/control_pusc.jpg", "ПРИСПОСОБЛЕНИЕ ДЛЯ КОНТРОЛЯ ПУСКОВОГО УСТРОЙСТВА МГП", "PRISP_FOR_CONTR_PUSK", "", "", "", "", ""),
+                new Productions.ProductionsBuilder().mainImage("/resources/images/production_menu/ukm.jpg").mainText("Устройство контролля массы")
+                        .buttonName("UKM").build()
         ));
         modelAndView.addObject("production", productionses);
 
@@ -196,5 +203,21 @@ public class MenuController {
         return "redirect:/redirect_production";
     }
 
+    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
+    @ResponseBody
+    public String uploadFile(@RequestParam("file") MultipartFile file) {
+        String name = null;
+
+        if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
+                name = file.getOriginalFilename();
+                return "You successfully uploaded file=" + name;
+            } catch (IOException e) {
+                return "You failed to upload " + name + " => " + e.getMessage();
+            }
+        }
+        return "NULL";
+    }
 
 }

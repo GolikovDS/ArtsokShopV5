@@ -22,8 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="ArtsokShopV0.1" />
         <module name="ArtsokShopV5" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="ArtsokShopV0.1" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

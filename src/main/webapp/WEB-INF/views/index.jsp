@@ -24,7 +24,7 @@
                         <button class="btnMenu" name="kat"><spring:message code="production"/></button>
                         <button class="btnMenu" name="contacts"><spring:message code="contacts"/></button>
                         <button class="btnMenu" name="basket"><spring:message code="basket"/></button>
-                        <button class="btnMenu" name="login"><spring:message code="login"/></button>
+                        <%--<button class="btnMenu" name="login"><spring:message code="login"/></button>--%>
 
                         <c:choose>
                             <c:when test="${username=='admin'}">
@@ -34,7 +34,7 @@
                     </div>
                 </form:form>
             </td>
-            <td style="color: #ffa70b;">${username}</td>
+            <%--<td style="color: #ffa70b;">${username}</td>--%>
             <td>
                  <span style="float: right; right: 15px;">
     <a href="?lang=en"><img src="${pageContext.request.contextPath}/resources/images/en_local.jpg"
