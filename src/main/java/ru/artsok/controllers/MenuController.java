@@ -53,7 +53,6 @@ public class MenuController {
 
     @RequestMapping(params = "login", method = RequestMethod.POST)
     public String login(@RequestParam(value = "error", required = false) String error) {
-
         return "redirect:/menu/login";
     }
 

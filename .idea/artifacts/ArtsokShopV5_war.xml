@@ -3,6 +3,11 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="ArtsokShop.war">
       <element id="artifact" artifact-name="ArtsokShopV5:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="postgresql-42.1.4" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

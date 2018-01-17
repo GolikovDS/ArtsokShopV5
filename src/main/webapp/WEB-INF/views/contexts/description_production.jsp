@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <link rel="stylesheet" type="text/css"
@@ -23,10 +24,18 @@
 
     </tr>
 </table>
-
-
 <div>
     <spring:message code="${production.getDescription()}"/>
+</div>
+
+<div>
+    <form:form method="post" action="order" modelAttribute="order">
+        <p> ${order.getName()}:
+            <form:input path="type"/>
+            <form:input path="quantity"/>
+            <input type="submit" name="submit" value="Продолжить">
+        </p>
+    </form:form>
 </div>
 </body>
 </html>
