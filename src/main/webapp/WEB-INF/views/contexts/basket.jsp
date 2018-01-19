@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: User
@@ -12,5 +13,11 @@
 </head>
 <body>
 <p>Корзина</p>
+
+<div>
+    <form:form method="post" action="/buy">
+        <input type="submit" name="submit" value="Купить">
+    </form:form>
+</div>
 </body>
 </html>

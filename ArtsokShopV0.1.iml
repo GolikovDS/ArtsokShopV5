@@ -19,6 +19,8 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/ru/artsok/config/ApplicationContextConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/application-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/application-context.xml</file>
         </fileset>
         <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/ru/artsok/config/SecurityConfig.java</file>

@@ -19029,6 +19029,21 @@
       <exported-key name="group_members_group_id_fkey" table="group_members" schema="public" catalog="artsok_sql" columns="group_id"/>
     </table>
     <table name="groups_id_seq" schema="public" catalog="artsok_sql" type="SEQUENCE"/>
+    <table name="order" schema="public" catalog="artsok_sql" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnb3JkZXJfaWRfc2VxMSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="data_julian" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="login" sqlType="varchar" precision="127" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="order_pkey1" columns="id"/>
+    </table>
+    <table name="order_id_seq" schema="public" catalog="artsok_sql" type="SEQUENCE"/>
+    <table name="order_id_seq1" schema="public" catalog="artsok_sql" type="SEQUENCE"/>
+    <table name="orders" schema="public" catalog="artsok_sql" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnb3JkZXJfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="text_order" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="quantity" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_order" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="order_pkey" columns="id"/>
+    </table>
     <table name="persistent_logins" schema="public" catalog="artsok_sql" type="TABLE">
       <column name="username" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
       <column name="series" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>

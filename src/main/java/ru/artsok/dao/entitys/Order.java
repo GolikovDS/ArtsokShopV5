@@ -2,55 +2,27 @@ package ru.artsok.dao.entitys;
 
 
 public class Order {
-    private String name;
-    private String type;
-    private int quantity;
+    private long dataJulian;
+    private String login;
 
-    public Order() {
+    public Order(long dataJulian, String login) {
+        this.dataJulian = dataJulian;
+        this.login = login;
     }
 
-    public Order(OrderBuilder builder) {
-        this.name = builder.name;
-        this.type = builder.type;
-        this.quantity = builder.quantity;
+    public long getDataJulian() {
+        return dataJulian;
     }
 
-    public String getName() {
-        return name;
+    public void setDataJulian(long dataJulian) {
+        this.dataJulian = dataJulian;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getLogin() {
+        return login;
     }
 
-    public String getType() {
-        return type;
+    public void setLogin(String login) {
+        this.login = login;
     }
-
-    public static class OrderBuilder {
-        private String name;
-        private String type;
-        private int quantity;
-
-        public OrderBuilder name(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public OrderBuilder type(String type) {
-            this.type = type;
-            return this;
-        }
-
-        public OrderBuilder quantity(int quantity) {
-            this.quantity = quantity;
-            return this;
-        }
-
-        public Order build() {
-            return new Order(this);
-        }
-    }
-
-
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import ru.artsok.dao.entitys.Order_0;
 import ru.artsok.dao.entitys.Productions;
 import ru.artsok.dao.entitys.User;
 
@@ -66,19 +67,19 @@ public class MenuController {
         return modelAndView;
     }
 
-//    @RequestMapping(value = "/login", method = RequestMethod.POST)
-//    public ModelAndView loginPost(@RequestParam(value = "error", required = false) String err) {
-//        ModelAndView modelAndView = new ModelAndView();
-//        getAuthenticationName(modelAndView);
-//        modelAndView.setViewName("index");
-//        modelAndView.addObject("context", "contexts/lk_login.jsp");
-//        modelAndView.addObject("user", new User());
-//
-//        if (err != null) {
-//            modelAndView.addObject("error", "error name or password");
-//        }
-//        return modelAndView;
-//    }
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ModelAndView loginPost(@RequestParam(value = "error", required = false) String err) {
+        ModelAndView modelAndView = new ModelAndView();
+        getAuthenticationName(modelAndView);
+        modelAndView.setViewName("index");
+        modelAndView.addObject("context", "contexts/lk_login.jsp");
+        modelAndView.addObject("user", new User());
+
+        if (err != null) {
+            modelAndView.addObject("error", "Неверный логин или пароль");
+        }
+        return modelAndView;
+    }
 
     @RequestMapping(params = "contacts", method = RequestMethod.POST)
     public String menuContacts() {
@@ -185,7 +186,7 @@ public class MenuController {
     }
 
     @RequestMapping(params = "add_production", method = RequestMethod.POST)
-    public String addProduction() {
+    public String addProduction(Order_0 order0) {
         return "redirect:menu/add_production";
     }
 
@@ -198,7 +199,7 @@ public class MenuController {
 
     @RequestMapping(value = "/kat", method = RequestMethod.POST)
     public String addDescriptionProduction(Model model, @RequestParam("mgp") String s) {
-        model.addAttribute("productName", s);
+        model.addAttribute("productionPage", s);
         return "redirect:/redirect_production";
     }
 

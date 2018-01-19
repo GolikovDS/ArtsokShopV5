@@ -10,7 +10,7 @@
     <title></title>
 </head>
 <body>
-<p> ${productName} </p>
+<p> ${productionPage} </p>
 <table class="table-description-production">
     <tr>
         <td><a href="${pageContext.request.contextPath}${production.getFirstImage()}" data-lightbox="roadtrip">
@@ -29,8 +29,10 @@
 </div>
 
 <div>
-    <form:form method="post" action="order" modelAttribute="order">
+    <form:form method="post" action="/order" modelAttribute="order">
         <p> ${order.getName()}:
+            <form:hidden path="name"/>
+            <input type="hidden" value="${productionPage}" name="productionPage"/>
             <form:input path="type"/>
             <form:input path="quantity"/>
             <input type="submit" name="submit" value="Продолжить">

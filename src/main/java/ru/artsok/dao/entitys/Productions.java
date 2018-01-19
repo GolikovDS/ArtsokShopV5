@@ -1,6 +1,8 @@
 package ru.artsok.dao.entitys;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class Productions {
     private String nameProduction;
     private String mainImage;

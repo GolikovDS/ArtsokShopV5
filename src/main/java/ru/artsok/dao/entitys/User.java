@@ -40,8 +40,6 @@ public class User {
     public User() {
     }
 
-    ;
-
     public String getCompany() {
         return company;
     }

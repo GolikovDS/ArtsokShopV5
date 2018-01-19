@@ -1,27 +1,33 @@
 package ru.artsok.test;
 
 
+import org.springframework.stereotype.Repository;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.*;
 
-
+@Repository
 public class Test {
 
-
+//    @Autowired
+//    public DataSource dataSource;
+////    @Autowired
+//    private  JdbcTemplate jdbcTemplate;
+//
+//    @PostConstruct
+//    public void init() {
+//        System.out.println("JDBCExample postConstruct is called. datasource = " + dataSource);
+//
+//    }
     public static void main(String[] args) throws IOException, SQLException {
-
-        byte[] b =
-                readBinaryFile(new File("P:\\java\\ArtsokShopV0.1\\src\\main\\webapp\\resources\\images\\production_menu\\aist.jpg"));
-
-//        try {
-//            new Test().insert(b);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-        saveBinaryFile(new Test().selectById(8), new File("P:\\java\\ArtsokShopV0.1\\src\\main\\java\\ru\\artsok\\test\\1.jpg"));
+//        Test test = new Test();
+//        test.jdbcTemplate = new JdbcTemplate(test.dataSource);
+//        test.jdbcTemplate.update("");
+//
+//        System.out.println("a");
     }
 
 

@@ -24,7 +24,7 @@
                         <button class="btnMenu" name="kat"><spring:message code="production"/></button>
                         <button class="btnMenu" name="contacts"><spring:message code="contacts"/></button>
                         <button class="btnMenu" name="basket"><spring:message code="basket"/></button>
-                        <%--<button class="btnMenu" name="login"><spring:message code="login"/></button>--%>
+                        <button class="btnMenu" name="login"><spring:message code="login"/></button>
 
                         <c:choose>
                             <c:when test="${username=='admin'}">
